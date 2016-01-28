@@ -31,11 +31,13 @@ def is_file_format(my_file, format):
 
 def do_scan_files(base_path):
     def scan_file(path):
-        if not is_file_format(path, 'json'):
+        if is_file_format(path, 'json'):
             try:
                 load_json(path)
             except:
                 return None
+        else:
+            return None
         return path
 
     #Check if path is a single file
