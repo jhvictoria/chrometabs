@@ -60,3 +60,6 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+tabs/*.json
+!tabs/demo.json
