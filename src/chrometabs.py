@@ -90,9 +90,9 @@ if __name__ == '__main__':
         json_path = sys.argv[1]
 
     #Attach absolute path
-    path = os.path.dirname(os.path.abspath(__file__)) + "/"
+    path = os.getcwd() + "/"
     json_path = path + json_path
-
+    print json_path
     files = do_scan_files(json_path)
 
     for f in files:
