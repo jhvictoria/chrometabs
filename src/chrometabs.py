@@ -46,8 +46,13 @@ def do_scan_files(base_path):
         return [jfile]
     
     files = []
+
     for item in os.listdir(base_path):
         new_path = base_path + item
+
+        #exclude .git folder
+        if item == ".git":
+            continue
 
         if os.path.isfile(new_path):
             jfile = scan_file(new_path)
@@ -70,14 +75,24 @@ def load_json(json_file):
 
 
 if __name__ == '__main__':
+    print 'chrometabs',len(sys.argv)
+
     files = list()
 
     #Setup files to scan
     if len(sys.argv) != 2:
-        print "Usage: python python src/chrometabs.py [path|json]"
-        exit(2)
-            
-    json_path = sys.argv[1]
+        if len(sys.argv) == 1:
+            json_path = "tabs/"
+        else:  
+            print "Usage: python python src/chrometabs.py [path|json]"
+            exit(2)
+    else:       
+        json_path = sys.argv[1]
+
+    #Attach absolute path
+    path = os.path.dirname(os.path.abspath(__file__)) + "/"
+    json_path = path + json_path
+
     files = do_scan_files(json_path)
 
     for f in files:
