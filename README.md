@@ -10,6 +10,16 @@ Run the tool by passing a JSON file with your URLs:
 python src/chrometabs.py tabs/demo.json
 ```
 
+demo.json:
+```
+{
+    "gmail" : "https://mail.google.com/mail/u/0/#inbox",
+    "whatsapp": "https://web.whatsapp.com/",
+    "8tracks" : "http://8tracks.com/",
+    "netflix" : "http://www.netflix.com/"
+}
+```
+
 You can also pass a folder, it will search for all JSON files recursively:
 
 ``` shell
