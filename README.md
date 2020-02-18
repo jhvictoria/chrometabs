@@ -27,4 +27,4 @@ python src/chrometabs.py tabs/
 ```
 
 # Author
-Jorge Victoria (jhvm.puj@gmail.com)
+Jorge Victoria
